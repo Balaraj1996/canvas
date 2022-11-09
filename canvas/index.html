@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .nav
+         {
+            background-color: gray;
+            border: 2px solid black;
+            height: 100px;
+            width:1200px ;
+            margin-top: 10px;
+            margin-left: 0px;
+            border-bottom: none;
+           
+         }
+         #home{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+         }
+      #article{
+            border: 2px solid black;
+            width: 1200px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .content{
+            height: 500px;
+            width: 1000px;
+            border: 2px solid black;
+            margin-left: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            justify-items: center;
+            position: relative;
+        }
+        #h1{
+            position: absolute;
+            top: 1px;
+        }
+        
+        #circle1{
+            position: absolute;
+            top: 5px;
+            /* background: none; */
+
+        }
+        
+        #circle2{
+            position: absolute;
+            top: 130px;
+            /* background: none; */
+
+        }
+
+        #circle3{
+            position: absolute;
+            top: 255px;
+            /* background: none; */
+
+        }
+
+        #circle4{
+            position: absolute;
+            top: 380px;
+            /* background: none; */
+
+        }
+
+        #arrow1{ 
+            position: absolute;
+            right: 60px;
+            top: -80px;
+
+        }
+        #arrow2{
+            
+            position: absolute;
+            right: 60px;
+            top: 40px;
+        }
+        #arrow3{
+          
+            position: absolute;
+            right: 60px;
+            top: 165px;
+        }
+        #arrow4{
+           
+            position: absolute;
+            right: 60px;
+            top: 295px;
+        }
+        
+        #btn{
+            position: absolute;
+            top: 570px;
+            right: 200px;
+            border: 2px solid black;
+        }
+       #footer{
+        background-color: grey;
+        height: 50px;
+        width: 1200px;
+        border: 2px solid black;
+        border-top: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="nav">
+       
+            <h3 align="center">Bubbles App</h3>
+        <div id="home">
+            <a href=""><img src="https://cdn-icons.flaticon.com/png/512/608/premium/608283.png?token=exp=1660488381~hmac=a325363c1602422fcfcd99720f05fd0a" alt="" height="30px" width="50px"></a>
+            <a href="" ><img src="https://cdn-icons-png.flaticon.com/512/626/626043.png" alt="" height="30" width="50px"></a>
+            <a href=""><img src="https://cdn-icons.flaticon.com/png/512/2976/premium/2976286.png?token=exp=1660487894~hmac=2e12bb28550d8c175083e7038f97a345" alt="" height="30px" width="30px"></a>
+            <a href=""><img src="https://cdn-icons-png.flaticon.com/512/846/846551.png" alt="" height="30px" width="40px"></a>
+            <textarea name="" id="" cols="90" rows="1" placeholder="http//localhost80"></textarea>
+            <a href=""><img src="https://cdn-icons.flaticon.com/png/512/5676/premium/5676276.png?token=exp=1660488121~hmac=a64d01935cf866527611fb22a05d419d" alt="" height="40px" width="50px"></a>
+        </div>
+
+    </div>
+    <div id="article">
+        <div id="h1"><h2>Bubbles App</h2></div>
+        <div class="content">
+            
+            <div id="1st">
+                <canvas id="circle1"  onclick="yellow()"></canvas>
+                <canvas id="arrow1" height="300" width="300"></canvas>
+            </div>
+            <div id="2nd">
+                <canvas id="circle2" onclick="blue()"></canvas>
+                <canvas id="arrow2" height="300" width="300"></canvas>
+              
+            </div>
+            <div id="3rd">
+                <canvas id="circle3" onclick="red()"></canvas>
+                <canvas id="arrow3" height="300" width="300"></canvas>
+               
+            </div>
+            <div id="4th">
+                <canvas id="circle4" onclick="green()"></canvas>
+                <canvas id="arrow4" height="300" width="300"></canvas>
+                
+            </div>
+    
+        </div>
+
+        <div>
+            <button id="btn" onclick="reset()"> Reset</button>
+        </div>
+    </div>
+    <div id="footer">
+
+    </div>
+    <script>
+
+    let tri = document.getElementById("arrow1").getContext("2d");
+
+        tri.fillStyle = "black";
+        tri.beginPath();
+        tri.moveTo(150, 150);
+        tri.lineTo(200, 100);
+        tri.lineTo(200,130);
+        tri.lineTo(300,130);
+        tri.lineTo(300,170);
+        tri.lineTo(200,170);
+        tri.lineTo(200,200);
+        tri.fill();
+        
+        let tri1 = document.getElementById("arrow2").getContext("2d");
+
+        tri1.fillStyle = "black";
+        tri1.beginPath();
+        tri1.moveTo(150, 150);
+        tri1.lineTo(200, 100);
+        tri1.lineTo(200,130);
+        tri1.lineTo(300,130);
+        tri1.lineTo(300,170);
+        tri1.lineTo(200,170);
+        tri1.lineTo(200,200);
+        tri1.fill();
+
+    let tri2 = document.getElementById("arrow3").getContext("2d");
+
+        tri2.fillStyle = "black";
+        tri2.beginPath();
+        tri2.moveTo(150, 150);
+        tri2.lineTo(200, 100);
+        tri2.lineTo(200,130);
+        tri2.lineTo(300,130);
+        tri2.lineTo(300,170);
+        tri2.lineTo(200,170);
+        tri2.lineTo(200,200);
+        tri2.fill();
+
+    let tri3 = document.getElementById("arrow4").getContext("2d");
+
+        tri3.fillStyle = "black";
+        tri3.beginPath();
+        tri3.moveTo(150, 150);
+        tri3.lineTo(200, 100);
+        tri3.lineTo(200,130);
+        tri3.lineTo(300,130);
+        tri3.lineTo(300,170);
+        tri3.lineTo(200,170);
+        tri3.lineTo(200,200);
+        tri3.fill();
+
+     let cir1= document.getElementById("circle1").getContext("2d");
+
+        cir1.fillStyle = "yellow";
+        cir1.arc(60, 60, 60, 0, 2 * Math.PI);
+        cir1.fill();
+
+    let cir2= document.getElementById("circle2").getContext("2d");
+
+        cir2.fillStyle = "blue";
+        cir2.arc(60, 60, 60, 0, 2 * Math.PI);
+        cir2.fill();
+
+    let cir3= document.getElementById("circle3").getContext("2d");
+
+        cir3.fillStyle = "red";
+        cir3.arc(60, 60, 60, 0, 2 * Math.PI);
+        cir3.fill();
+    
+    let cir4= document.getElementById("circle4").getContext("2d");
+
+        cir4.fillStyle = "green";
+        cir4.arc(60, 60, 60, 0, 2 * Math.PI);
+        cir4.fill(); 
+
+
+        let content=document.querySelectorAll("content");
+
+function yellow(){
+    let arrow1=document.getElementById("arrow1");
+    let circle1=document.getElementById("circle1");
+    arrow1.style.transform="translateX(-675pX)";
+    arrow1.style.transitionDuration="2s";
+    setTimeout(() => {
+        cir1.fillStyle = "grey";
+        cir1.arc(60, 60, 60, 0, 2 * Math.PI);
+        cir1.fill();
+    }, 2000);
+    
+}
+function blue(){
+    let arrow2=document.getElementById("arrow2");
+    let circle2=document.getElementById("circle2");
+    arrow2.style.transform="translateX(-675pX)";
+    arrow2.style.transitionDuration="2s";
+    setTimeout(() => {
+        cir2.fillStyle = "grey";
+        cir2.arc(60, 60, 60, 0, 2 * Math.PI);
+        cir2.fill();
+    }, 2000);
+    
+}
+function red(){
+    let arrow3=document.getElementById("arrow3");
+    let circle3=document.getElementById("circle3");
+    arrow3.style.transform="translateX(-675pX)";
+    arrow3.style.transitionDuration="2s";
+    setTimeout(() => {
+        cir3.fillStyle = "grey";
+        cir3.arc(60, 60, 60, 0, 2 * Math.PI);
+        cir3.fill();   
+    }, 2000);
+    
+}
+function green(){
+    let arrow4=document.getElementById("arrow4");
+    let circle4=document.getElementById("circle4");
+    arrow4.style.transform="translateX(-675pX)";
+    arrow4.style.transitionDuration="2s";
+    setTimeout(() => {
+        cir4.fillStyle = "grey";
+        cir4.arc(60, 60, 60, 0, 2 * Math.PI);
+        cir4.fill();
+    }, 2000);
+    
+}
+function reset(){
+    let btn=document.getElementById("btn");
+    arrow1.style.transform="none";
+    arrow1.style.transitionDuration="none";
+    cir1.fillStyle = "yellow";
+    cir1.arc(60, 60, 60, 0, 2 * Math.PI);
+    cir1.fill();
+
+    arrow2.style.transform="none";
+    arrow2.style.transitionDuration="none";
+    cir2.fillStyle = "blue";
+    cir2.arc(60, 60, 60, 0, 2 * Math.PI);
+    cir2.fill();
+
+    arrow3.style.transform="none";
+    arrow3.style.transitionDuration="none";
+    cir3.fillStyle = "red";
+    cir3.arc(60, 60, 60, 0, 2 * Math.PI);
+    cir3.fill();
+
+    arrow4.style.transform="none";
+    arrow4.style.transitionDuration="none";
+    cir4.fillStyle = "green";
+    cir4.arc(60, 60, 60, 0, 2 * Math.PI);
+    cir4.fill(); 
+
+    
+}
+
+    </script>
+</body>
+</html>
